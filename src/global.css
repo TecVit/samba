@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap');
+
+:root {
+
+  /* Neutro */
+  --neutralOne: #0a0a0a;
+  --neutralTwo: #171717;
+  --neutralThree: #262626;
+  --neutralFour: #404040;
+  --neutralFive: #525252;
+  --neutralSix: #737373;
+  --neutralSeven: #a3a3a3;
+  --neutralEight: #d4d4d4;
+  --neutralNine: #e5e5e5;
+  --neutralTen: #f5f5f5;
+  --neutralEleven: #fafafa;
+  --neutralTwelve: #f1f7ff;
+
+  /* Laranja */
+  --orangeOne: #c2410c;
+  --orangeTwo: #ea580c;
+  --orangeThree: #f97316;
+  --orangeFour: #fb923c;
+
+  /* Outros */
+  --backgroundGradient: radial-gradient(213.02% 135.28% at 19.47% -14.53%,var(--orangeOne) 0%, var(--orangeTwo) 30.69%, var(--orangeThree) 100%);
+  --white: #ffffff;
+  --blue: #71b3d6;
+  --yellow: #ffa800;
+  --green: #10b710;
+  --greenLight: #04d361;
+  --red: #F55557;
+  --orange: #ff6400;
+  --gray: #222831;
+  --grayMicrosoft: #2c2c2e;
+  --firebase: #f5820d;
+}
+
+* {
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+  box-sizing: border-boxr;
+  text-decoration: none;
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  list-style: none;
+}
+
+body {
+  background: var(--neutralTen);
+  color: var(--neutralOne);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--orangeThree);
+  color: var(--neutralTen);
+}
+
