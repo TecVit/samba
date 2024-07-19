@@ -249,3 +249,169 @@
     margin: 0px 0px 8px 0px;
     text-align: justify;
 }
+
+.container-posts .posts .post a {
+    width: 95%;
+    font-size: 16px;
+    font-weight: 550;
+    line-height: 20px;
+    color: var(--orangeTwo);
+    margin: 4px 0px 8px 0px;
+    text-align: start;
+    cursor: pointer;
+} .container-posts .posts .post a:hover {
+    text-decoration: underline;
+}
+
+/* Não encontrado */
+.container-blog .posts .nao-encontrado {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--orangeThree);
+    margin: -40px 0px 0px 0px;
+} .container-blog .posts .nao-encontrado img {
+    width: 100%;
+    max-width: 400px;
+    margin: -50px -50px -35px -50px;
+    height: max-content;
+} .container-blog .posts .nao-encontrado h1 {
+    width: 97.5%;
+    text-align: center;
+    margin: 0px auto;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* Blog Individual */
+.container-post-selecionado {
+    width: 90%;
+    max-width: 1100px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: -20px 0px 0px 0px;
+    padding: 0px 0px 100px 0px;
+}
+
+.container-post-selecionado h1 {
+    width: 100%;
+    height: auto;
+    text-align: start;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 30px;
+    color: var(--neutralFive);
+    color: var(--orangeThree);
+    margin: 0px 0px 14px 0px;
+}
+
+.container-post-selecionado p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    color: var(--neutralFive);
+    margin: 0px 0px 14px 0px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-align: justify;
+}
+
+.container-post-selecionado .comentarios {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 30px 0px 0px 0px;
+}
+
+.container-post-selecionado .comentarios .form-comentario {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px;
+    margin: 0px auto 0px 0px;
+}
+
+.container-post-selecionado .comentarios .form-comentario h1 {
+    font-size: 24px;
+    font-weight: 650;
+    color: var(--neutralSix);
+}
+
+.container-post-selecionado .comentarios .form-comentario .input {
+    width: max-content;
+    height: auto;
+    display: flex;
+    flex-direction: column;    
+    margin: 0px auto 20px 0px;
+    position: relative;
+}
+
+.container-post-selecionado .comentarios .form-comentario .input label {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--neutralSix);
+    margin: 0px 0px 4px 2px;
+}
+
+.container-post-selecionado .comentarios .form-comentario .input input {
+    width: 400px;
+    max-width: 100%;
+    height: 45px;
+    border: 2px solid var(--neutralEight);
+    border-radius: 8px;
+    padding: 0px 12.5px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--neutralFive);
+    outline: none;
+} .container-post-selecionado .comentarios .form-comentario .input input:focus {
+    border: 2px solid var(--neutralSeven);
+    box-shadow: 0px 0px 10px var(--neutralSeven);
+}
+
+.container-post-selecionado .comentarios .form-comentario .input textarea {
+    width: 400px;
+    min-width: 400px;
+    max-width: 100%;
+    height: 70px;
+    min-height: 70px;
+    max-height: 140px;
+    border: 2px solid var(--neutralEight);
+    border-radius: 8px;
+    padding: 12.5px 12.5px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--neutralFive);
+    outline: none;
+} .container-post-selecionado .comentarios .form-comentario .input textarea:focus {
+    border: 2px solid var(--neutralSeven);
+    box-shadow: 0px 0px 10px var(--neutralSeven);
+}
+
+.container-post-selecionado .comentarios .form-comentario button {
+    width: 425px;
+    max-width: 100%;
+    height: 50px;
+    border: 2px solid var(--orangeThree);
+    background: var(--orangeThree);
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--neutralEight);
+    outline: none;
+    cursor: pointer;
+    margin: 5px auto 0px 0px;
+} .container-post-selecionado .comentarios .form-comentario button:hover,
+  .container-post-selecionado .comentarios .form-comentario button:focus {
+    background: transparent;
+    color: var(--orangeThree);
+    box-shadow: 0px 0px 10px var(--orangeThree);
+}

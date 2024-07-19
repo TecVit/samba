@@ -7,8 +7,24 @@ import './css/Blog.css';
 
 // Logo
 import Logo from '../img/logo_pocket_samba.png';
+import NaoEncontrado from '../img/nao-encontrado.png';
 
 const Blog = () => {
+
+    const meses = [
+        'Janeiro',
+        'Fevereiro',
+        'Março',
+        'Abril',
+        'Maio',
+        'Junho',
+        'Julho',
+        'Agosto',
+        'Setembro',
+        'Outubro',
+        'Novembro',
+        'Dezembro',
+    ];
 
     // Animações
     function getTopPositionRelativeToPage(element) {
@@ -60,35 +76,34 @@ const Blog = () => {
         };
     }, []);
 
-    const meses = [
-        'Janeiro',
-        'Fevereiro',
-        'Março',
-        'Abril',
-        'Maio',
-        'Junho',
-        'Julho',
-        'Agosto',
-        'Setembro',
-        'Outubro',
-        'Novembro',
-        'Dezembro',
-    ];
-
-    const posts = [
+    // Dados e Inputs
+    const [post, setPost] = useState({});
+    const [posts, setPosts] = useState([
         {
-            data: '10/03/2009',
-            titulo: 'Why Lead Generation is Key for Business Growth',
-            previa: 'A small river named Duden flows by their place and supplies it with the necessary regelialia.',
-            mensagem: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, eius mollitia suscipit, quisquam doloremque distinctio perferendis et doloribus unde architecto optio laboriosam porro adipisci sapiente officiis nemo accusamus ad praesentium? Esse minima nisi et. Dolore perferendis, enim praesentium omnis, iste doloremque quia officia optio deserunt molestiae voluptates soluta architecto tempora. Molestiae cupiditate inventore animi, maxime sapiente optio, illo est nemo veritatis repellat sunt doloribus nesciunt! Minima laborum magni reiciendis qui voluptate quisquam voluptatem soluta illo eum ullam incidunt rem assumenda eveniet eaque sequi deleniti tenetur dolore amet fugit perspiciatis ipsa, odit. Nesciunt dolor minima esse vero ut ea, repudiandae suscipit!',
+            data: '08/03/2023',
+            titulo: 'Uma Noite Inesquecível: O Encanto do Samba',
+            previa: 'Evento de samba foi espetacular, com apresentações cheias de energia e alegria. As pessoas dançaram e se divertiram ao som de músicas de samba, embaladas por instrumentos como pandeiro, cavaquinho e surdo.',
+            mensagem: `O samba é um dos ritmos mais emblemáticos e representativos da cultura brasileira, conhecido mundialmente por sua energia contagiante e sua capacidade de unir pessoas de diferentes origens e idades. Originado nas rodas de capoeira e nas festas de escravos africanos no Brasil colonial, o samba se desenvolveu e se diversificou ao longo dos anos, incorporando elementos de várias tradições musicais e culturais. Este ritmo alegre e pulsante tornou-se um símbolo da identidade brasileira, especialmente durante o Carnaval, onde milhares de pessoas se reúnem para celebrar com desfiles, danças e festas nas ruas.
+    
+Os instrumentos utilizados no samba são fundamentais para criar seu ritmo característico. O pandeiro, com seu som metálico e versátil, é um dos mais icônicos. O cavaquinho, um pequeno violão de quatro cordas, adiciona melodias ágeis e vibrantes. Outros instrumentos essenciais incluem o tamborim, o surdo, o reco-reco e a cuíca, cada um contribuindo de forma única para a textura rítmica do samba. Juntos, esses instrumentos criam uma base rítmica complexa e hipnotizante que convida todos a dançar.
+    
+Além de seu valor musical, o samba também desempenha um papel importante na vida social e cultural do Brasil. As rodas de samba, que acontecem em bares, praças e casas de amigos, são ocasiões para encontros, conversas e celebrações comunitárias. O samba é uma forma de expressão cultural e resistência, especialmente para as comunidades negras, que encontram nele uma maneira de preservar suas tradições e histórias. Em bairros do Rio de Janeiro como a Lapa e a Pedra do Sal, o samba é vivido e respirado todos os dias, perpetuando suas raízes e renovando seu espírito a cada geração.
+    
+O samba também conquistou o mundo, sendo apreciado e adotado por artistas internacionais e presente em diversos festivais de música ao redor do globo. A riqueza de suas melodias e ritmos cativa pessoas de todas as nacionalidades, e sua influência pode ser vista em vários gêneros musicais. Assim, o samba continua a ser um poderoso embaixador da cultura brasileira, levando alegria, paixão e uma mensagem de união e celebração para todos os cantos do planeta.`,
         },
         {
-            data: '17/07/2024',
-            titulo: 'Why Lead Generation is Key for Business Growth 2',
-            previa: 'A small river named Duden flows by their place and supplies it with the necessary regelialia.',
-            mensagem: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, eius mollitia suscipit, quisquam doloremque distinctio perferendis et doloribus unde architecto optio laboriosam porro adipisci sapiente officiis nemo accusamus ad praesentium? Esse minima nisi et. Dolore perferendis, enim praesentium omnis, iste doloremque quia officia optio deserunt molestiae voluptates soluta architecto tempora. Molestiae cupiditate inventore animi, maxime sapiente optio, illo est nemo veritatis repellat sunt doloribus nesciunt! Minima laborum magni reiciendis qui voluptate quisquam voluptatem soluta illo eum ullam incidunt rem assumenda eveniet eaque sequi deleniti tenetur dolore amet fugit perspiciatis ipsa, odit. Nesciunt dolor minima esse vero ut ea, repudiandae suscipit!',
-        },
-    ]
+            data: '08/03/2023',
+            titulo: 'Uma Noite Inesquecível: O Encanto do Samba',
+            previa: 'Evento de samba foi espetacular, com apresentações cheias de energia e alegria. As pessoas dançaram e se divertiram ao som de músicas de samba, embaladas por instrumentos como pandeiro, cavaquinho e surdo.',
+            mensagem: `O samba é um dos ritmos mais emblemáticos e representativos da cultura brasileira, conhecido mundialmente por sua energia contagiante e sua capacidade de unir pessoas de diferentes origens e idades. Originado nas rodas de capoeira e nas festas de escravos africanos no Brasil colonial, o samba se desenvolveu e se diversificou ao longo dos anos, incorporando elementos de várias tradições musicais e culturais. Este ritmo alegre e pulsante tornou-se um símbolo da identidade brasileira, especialmente durante o Carnaval, onde milhares de pessoas se reúnem para celebrar com desfiles, danças e festas nas ruas.
+    
+Os instrumentos utilizados no samba são fundamentais para criar seu ritmo característico. O pandeiro, com seu som metálico e versátil, é um dos mais icônicos. O cavaquinho, um pequeno violão de quatro cordas, adiciona melodias ágeis e vibrantes. Outros instrumentos essenciais incluem o tamborim, o surdo, o reco-reco e a cuíca, cada um contribuindo de forma única para a textura rítmica do samba. Juntos, esses instrumentos criam uma base rítmica complexa e hipnotizante que convida todos a dançar.
+    
+Além de seu valor musical, o samba também desempenha um papel importante na vida social e cultural do Brasil. As rodas de samba, que acontecem em bares, praças e casas de amigos, são ocasiões para encontros, conversas e celebrações comunitárias. O samba é uma forma de expressão cultural e resistência, especialmente para as comunidades negras, que encontram nele uma maneira de preservar suas tradições e histórias. Em bairros do Rio de Janeiro como a Lapa e a Pedra do Sal, o samba é vivido e respirado todos os dias, perpetuando suas raízes e renovando seu espírito a cada geração.
+    
+O samba também conquistou o mundo, sendo apreciado e adotado por artistas internacionais e presente em diversos festivais de música ao redor do globo. A riqueza de suas melodias e ritmos cativa pessoas de todas as nacionalidades, e sua influência pode ser vista em vários gêneros musicais. Assim, o samba continua a ser um poderoso embaixador da cultura brasileira, levando alegria, paixão e uma mensagem de união e celebração para todos os cantos do planeta.`,
+        }
+    ]);
   
     return (
         <>
@@ -107,53 +122,101 @@ const Blog = () => {
                     </nav>
                 </div>
             </header>
-            <main className='container-blog'>
+            <main id='inicio' className='container-blog'>
 
                 {/* Informações principais */}
                 <section className='container-info'>
-                    <div id='inicio' className='content-info'>
+                    <div className='content-info'>
                         <div className='info'>
                             <div className='texto'>
                                 <h2>Blog</h2>
                                 <div className='rotas'>
                                     <p onClick={() => window.location.href = "/"}>{'Home >'}</p>
-                                    <p>{'Blog'}</p>
+                                    {post.titulo ? (
+                                        <>
+                                            <p onClick={() => window.location.href = "/blog"}>{`Blog >`}</p>
+                                            <p>{post.titulo}</p>
+                                        </>
+                                    ) : (
+                                        <p>Blog</p>
+                                    )}
                                 </div>
-                            </div>
-                            <div className='imagens'>
-
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <section className='container-posts'>
-                    <div className='posts'>
-                        {posts.length > 0 ? (
-                            posts.map((val, index) => (
-                                <div key={index} className='post'>
-                                    <img src={require('../img/exemplo.png')} alt='Imagem' />
-                                    <div className='data'>
-                                        <h1>{val.data.slice(0,2)}</h1>
-                                        <p>
-                                            {val.data.slice(6)}
-                                            <br/>
-                                            {meses[parseInt(val.data.slice(3,5)) - 1]}
-                                        </p>
+                {/* Posts Gerais */}
+                {!post.existe && (
+                    <section className='container-posts'>
+                        <div className='posts'>
+                            {posts.length > 0 ? (
+                                posts.map((val, index) => (
+                                    <div key={index} className='post'>
+                                        <img src={require('../img/image.png')} alt='Imagem' />
+                                        <div className='data'>
+                                            <h1>{val.data.slice(0,2)}</h1>
+                                            <p>
+                                                {val.data.slice(6)}
+                                                <br/>
+                                                {meses[parseInt(val.data.slice(3,5)) - 1]}
+                                            </p>
+                                        </div>
+                                        <h1>{val.titulo}</h1>
+                                        <p>{val.previa}</p>
+                                        <a onClick={() => {
+                                            setPost({
+                                                existe: true,
+                                                titulo: val.titulo,
+                                                previa: val.previa,
+                                                mensagem: val.mensagem,
+                                                imagem: val.imagem,
+                                            });
+                                            setTimeout(() => {
+                                                window.location.href = "#inicio";
+                                            }, 50);
+                                        }}>Ver mais..</a>
                                     </div>
-                                    <h1>{val.titulo}</h1>
-                                    <p>{val.previa}</p>
+                                ))
+                            ) : (
+                                <div className='nao-encontrado'>
+                                    <img src={NaoEncontrado} />
+                                    <h1>Nenhum post encontrado</h1>
                                 </div>
-                            ))
-                        ) : (
-                            <h1>Nenhum post encontrado</h1>
-                        )}
-                    </div>
-                </section>
+                            )}
+                        </div>
+                    </section>
+                )}
+                
+                {/* Post individual */}
+                {post.existe && (
+                    <section className='container-post-selecionado'>
+                        <h1>{post.titulo}</h1>
+                        <p>{post.mensagem}</p>
+                        <div className='comentarios'>
+                            <div className='form-comentario'>
+                                <h1>Envie seu comentário</h1>
+                                <div className='input'>
+                                    <label>Nome</label>
+                                    <input type='text' placeholder='Digite seu nome' />
+                                </div>
+                                <div className='input'>
+                                    <label>E-mail</label>
+                                    <input type='text' placeholder='Digite seu e-mail' />
+                                </div>
+                                <div className='input'>
+                                    <label>Comentário</label>
+                                    <textarea placeholder='Digite seu comentário'></textarea>
+                                </div>
+                                <button>Enviar</button>
+                            </div>
+                            <div className='lista-comentarios'>
 
-                <section className='container-post-selecionado'>
-
-                </section>
+                            </div>
+                        </div>
+                    </section>
+                )}
+                
 
                 {/* Créditos */}
                 <footer className='container-creditos'>

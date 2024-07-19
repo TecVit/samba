@@ -10,6 +10,21 @@ import Logo from '../img/logo_pocket_samba.png';
 
 const LandingPage = () => {
 
+    const meses = [
+        'Janeiro',
+        'Fevereiro',
+        'Março',
+        'Abril',
+        'Maio',
+        'Junho',
+        'Julho',
+        'Agosto',
+        'Setembro',
+        'Outubro',
+        'Novembro',
+        'Dezembro',
+    ];
+
     // Animações
     function getTopPositionRelativeToPage(element) {
         var rect = element.getBoundingClientRect();
@@ -40,8 +55,8 @@ const LandingPage = () => {
     }, []);
 
     // Verificando se chegou o dia do evento
-    const dataAlvo = '18/07/2024';
-    const horarioAlvo = '15:00:00';
+    const dataAlvo = '19/07/2024';
+    const horarioAlvo = '11:20:00';
     const [dias, setDias] = useState(0);
     const [horas, setHoras] = useState(0);
     const [minutos, setMinutos] = useState(0);
@@ -156,7 +171,7 @@ const LandingPage = () => {
                             <div className='texto'>
                                 <h2>Eventos de</h2>
                                 <h1>Samba 2024</h1>
-                                <p>21-24 de dezembro de 2024, Araraquara.</p>
+                                <p>{dataAlvo.slice(0, 2)} de {meses[parseInt(dataAlvo.slice(3, 5)) - 1]} de {dataAlvo.slice(6)}, Araraquara.</p>
                                 <div className='datas'>
                                     <div className='data'>
                                         <h1>{dias}</h1>
