@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleCheck, faEnvelope, faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faCircleCheck, faCircleUser, faEnvelope, faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp, faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
 import Confetti from 'react-confetti';
 import './css/Blog.css';
@@ -8,6 +8,9 @@ import './css/Blog.css';
 // Logo
 import Logo from '../img/logo_pocket_samba.png';
 import NaoEncontrado from '../img/nao-encontrado.png';
+import Creditos from './components/Creditos';
+import Navbar from './components/Navbar';
+import { clearCookies, deleteCookie, getCookie, setCookie } from '../firebase/cookies';
 
 const Blog = () => {
 
@@ -55,27 +58,6 @@ const Blog = () => {
         };
     }, []);
 
-    // Navbar
-    const navbarRef = useRef(null);
-    const [isActive, setIsActive] = useState(false);
-    const handleScrollNavbar = () => {
-        if (navbarRef.current) {
-            const scrollPosition = window.scrollY;
-            if (scrollPosition <= 65) {
-                setIsActive(false);
-            } else {
-                setIsActive(true);
-            }
-        }
-    };
-    useEffect(() => {
-        handleScrollNavbar();
-        window.addEventListener('scroll', handleScrollNavbar);
-        return () => {
-            window.removeEventListener('scroll', handleScrollNavbar);
-        };
-    }, []);
-
     // Dados e Inputs
     const [post, setPost] = useState({});
     const [posts, setPosts] = useState([
@@ -104,24 +86,39 @@ Além de seu valor musical, o samba também desempenha um papel importante na vi
 O samba também conquistou o mundo, sendo apreciado e adotado por artistas internacionais e presente em diversos festivais de música ao redor do globo. A riqueza de suas melodias e ritmos cativa pessoas de todas as nacionalidades, e sua influência pode ser vista em vários gêneros musicais. Assim, o samba continua a ser um poderoso embaixador da cultura brasileira, levando alegria, paixão e uma mensagem de união e celebração para todos os cantos do planeta.`,
         }
     ]);
-  
+    const [comentarios, setComentarios] = useState([
+        {
+            nome: 'John Doe',
+            data: 'October 03, 2018 at 2:21pm',
+            comentario: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?',
+        },
+        {
+            nome: 'John Doe',
+            data: 'October 03, 2018 at 2:21pm',
+            comentario: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?',
+        },
+        {
+            nome: 'John Doe',
+            data: 'October 03, 2018 at 2:21pm',
+            comentario: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?',
+        }
+    ]);
+
+    // Modais
+    const [mostrarTodosComentarios, setMostrarTodosComentarios] = useState(false);
+    const comentariosParaMostrar = mostrarTodosComentarios ? comentarios : comentarios.slice(0, 2);
+
+    // Informações do cliente
+    const nomeCookie = getCookie('nome') || '';
+    const emailCookie = getCookie('email') || '';
+    const telefoneCookie = getCookie('telefone') || '';
+    const cepCookie = getCookie('cep') || '';
+
     return (
         <>
-            <header ref={navbarRef} className={`container-navbar ${isActive ? 'active' : ''}`}>
-                <div className='navbar'>
-                    {/*<img onClick={() => window.location.href = "/"} src={Logo} className='logo' alt='Logo' />*/}
-                    <h1 onClick={() => window.location.href = "/"} className='logo'>Logo</h1>
-                    <nav className='links'>
-                        <a href='/'>Início</a>
-                        <a href='/#sobre'>Sobre nós</a>
-                        <a href='/#integrantes'>Integrantes</a>
-                        <a href='/#bilhetes'>Bilhetes</a>
-                        <a href='/#contato'>Contato</a>
-                        <a href='/blog'>Blog</a>
-                        <button>Comprar bilhete</button>
-                    </nav>
-                </div>
-            </header>
+            {/* Navbar */}
+            <Navbar />
+
             <main id='inicio' className='container-blog'>
 
                 {/* Informações principais */}
@@ -131,7 +128,7 @@ O samba também conquistou o mundo, sendo apreciado e adotado por artistas inter
                             <div className='texto'>
                                 <h2>Blog</h2>
                                 <div className='rotas'>
-                                    <p onClick={() => window.location.href = "/"}>{'Home >'}</p>
+                                    <p onClick={() => window.location.href = "/"}>{'Início >'}</p>
                                     {post.titulo ? (
                                         <>
                                             <p onClick={() => window.location.href = "/blog"}>{`Blog >`}</p>
@@ -211,7 +208,28 @@ O samba também conquistou o mundo, sendo apreciado e adotado por artistas inter
                                 <button>Enviar</button>
                             </div>
                             <div className='lista-comentarios'>
-
+                                <h1>{comentarios.length} {comentarios.length > 1 ? 'Comentários' : 'Comentário'}</h1>
+                                {comentarios.length > 0 ? (
+                                    comentariosParaMostrar.map((val, index) => (
+                                        <div key={index} className='comentario'>
+                                            <FontAwesomeIcon icon={faCircleUser} className='icon' />
+                                            <div className='column'>
+                                                <h1>{val.nome}</h1>
+                                                <h2>{val.data}</h2>
+                                                <p>{val.comentario}</p>
+                                            </div>
+                                        </div>
+                                    ))
+                                ) : (
+                                    <h2>Nenhum comentário encontrado</h2>
+                                )}
+                                {comentarios.length > 2 && (
+                                  mostrarTodosComentarios ? (
+                                        <button onClick={() => setMostrarTodosComentarios(false)}>Esconder comentários</button>
+                                    ) : (
+                                        <button onClick={() => setMostrarTodosComentarios(true)}>Mostrar todos comentários</button>
+                                    )
+                                )}
                             </div>
                         </div>
                     </section>
@@ -219,67 +237,7 @@ O samba também conquistou o mundo, sendo apreciado e adotado por artistas inter
                 
 
                 {/* Créditos */}
-                <footer className='container-creditos'>
-                    <div className='creditos'>
-                        <div className='info'>
-
-                            {/* INFORMAÇÕES */}
-                            <div className='column'>
-                                <h1>Eventalk</h1>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                <div className='redes-sociais'>
-                                    <a href='#' className='icon'>
-                                        <FontAwesomeIcon icon={faWhatsapp} className='ico' />
-                                    </a>
-                                    <a href='#' className='icon'>
-                                        <FontAwesomeIcon icon={faInstagram} className='ico' />
-                                    </a>
-                                    <a href='#' className='icon'>
-                                        <FontAwesomeIcon icon={faFacebook} className='ico' />
-                                    </a>
-                                </div>
-                            </div>
-
-                            {/* DÚVIDAS */}
-                            <div className='column'>
-                                <h1>Tem alguma dúvida?</h1>
-                                <div className='locais'>
-                                    <li>
-                                        <FontAwesomeIcon icon={faLocationDot} className="icon" />
-                                        <p>203 Fake St. Mountain View, San Francisco, California, USA</p>
-                                    </li>
-                                    <li>
-                                        <FontAwesomeIcon icon={faPhone} className="icon" />
-                                        <p>+55 (16) 99988-8777</p>
-                                    </li>
-                                    <li>
-                                        <FontAwesomeIcon icon={faEnvelope} className="icon" />
-                                        <p>email@example.com.br</p>
-                                    </li>
-                                </div>
-                                <div></div>
-                            </div>
-
-                            {/* LINKS */}
-                            <div className='column'>
-                                <h1>Outros Links</h1>
-                                <div className='links'>
-                                    <a href='/#sobre'>
-                                        Sobre nós
-                                    </a>
-                                    <a href='#inicio'>
-                                        Blog
-                                    </a>
-                                </div>
-                                <div></div>
-                            </div>
-
-                            
-                        </div>
-                        
-                        <p className='desenvolvido'>Copyright ©2024 Todos direitos reservados | Website desenvolvido por <strong>TecVit</strong></p>
-                    </div>
-                </footer>
+                <Creditos />
             </main>
         </>
     );

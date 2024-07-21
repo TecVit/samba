@@ -7,8 +7,36 @@ import './css/LandingPage.css';
 
 // Logo
 import Logo from '../img/logo_pocket_samba.png';
+import Creditos from './components/Creditos';
+import Navbar from './components/Navbar';
 
 const LandingPage = () => {
+
+    // Dados
+    const bilhetes = [
+        {
+            tipo: 'Básico',
+            mensagem: 'For personal use and exploration of AI technology',
+            preco: '19,99',
+            beneficios: [
+                '100 requests per day',
+                'Free trial features access',
+                'Limited API access'
+            ],
+            recomendado: false,
+        },
+        {
+            tipo: 'Premium',
+            mensagem: 'Perfect for professionals and small businesses in need of significant Al integration',
+            preco: '29,99',
+            beneficios: [
+                'Unlimited AI generation',
+                'Full new features access',
+                'Priority support'
+            ],
+            recomendado: true,
+        }
+    ];
 
     const meses = [
         'Janeiro',
@@ -94,73 +122,13 @@ const LandingPage = () => {
 
         return () => clearInterval(intervaloId);
     }, [dataAlvo, horarioAlvo]);
-
     
-    // Navbar
-    const navbarRef = useRef(null);
-    const [isActive, setIsActive] = useState(false);
-    const handleScrollNavbar = () => {
-        if (navbarRef.current) {
-            const scrollPosition = window.scrollY;
-            if (scrollPosition <= 65) {
-                setIsActive(false);
-            } else {
-                setIsActive(true);
-            }
-        }
-    };
-    useEffect(() => {
-        handleScrollNavbar();
-        window.addEventListener('scroll', handleScrollNavbar);
-        return () => {
-            window.removeEventListener('scroll', handleScrollNavbar);
-        };
-    }, []);
-
-    
-    const bilhetes = [
-        {
-            tipo: 'Básico',
-            mensagem: 'For personal use and exploration of AI technology',
-            preco: '19,99',
-            beneficios: [
-                '100 requests per day',
-                'Free trial features access',
-                'Limited API access'
-            ],
-            recomendado: false,
-        },
-        {
-            tipo: 'Premium',
-            mensagem: 'Perfect for professionals and small businesses in need of significant Al integration',
-            preco: '29,99',
-            beneficios: [
-                'Unlimited AI generation',
-                'Full new features access',
-                'Priority support'
-            ],
-            recomendado: true,
-        }
-    ];
-
   
     return (
         <>
-            <header ref={navbarRef} className={`container-navbar ${isActive ? 'active' : ''}`}>
-                <div className='navbar'>
-                    {/*<img onClick={() => window.location.href = "/"} src={Logo} className='logo' alt='Logo' />*/}
-                    <h1 onClick={() => window.location.href = "/"} className='logo'>Logo</h1>
-                    <nav className='links'>
-                        <a href='#inicio'>Início</a>
-                        <a href='#sobre'>Sobre nós</a>
-                        <a href='#integrantes'>Integrantes</a>
-                        <a href='#bilhetes'>Bilhetes</a>
-                        <a href='#contato'>Contato</a>
-                        <a href='/blog'>Blog</a>
-                        <button>Comprar bilhete</button>
-                    </nav>
-                </div>
-            </header>
+            {/* Navbar */}
+            <Navbar />
+
             <main className='container-landing'>
 
                 {/* Informações principais */}
@@ -215,7 +183,7 @@ const LandingPage = () => {
                                         <h1 className='verde'>{val.tipo}</h1>
                                         <p>{val.mensagem}</p>
                                         <h2><strong>R$</strong>{val.preco}</h2>
-                                        <button>Comprar bilhete</button>
+                                        <button onClick={() => window.location.href = "/pagamento"}>Comprar bilhete</button>
                                         <div className='list'>
                                             {val.beneficios.map((beneficio, index) => (
                                                 <li>
@@ -234,67 +202,7 @@ const LandingPage = () => {
                 </section>
                 
                 {/* Créditos */}
-                <footer className='container-creditos'>
-                    <div className='creditos'>
-                        <div className='info'>
-
-                            {/* INFORMAÇÕES */}
-                            <div className='column'>
-                                <h1>Eventalk</h1>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                <div className='redes-sociais'>
-                                    <a href='#' className='icon'>
-                                        <FontAwesomeIcon icon={faWhatsapp} className='ico' />
-                                    </a>
-                                    <a href='#' className='icon'>
-                                        <FontAwesomeIcon icon={faInstagram} className='ico' />
-                                    </a>
-                                    <a href='#' className='icon'>
-                                        <FontAwesomeIcon icon={faFacebook} className='ico' />
-                                    </a>
-                                </div>
-                            </div>
-
-                            {/* DÚVIDAS */}
-                            <div className='column'>
-                                <h1>Tem alguma dúvida?</h1>
-                                <div className='locais'>
-                                    <li>
-                                        <FontAwesomeIcon icon={faLocationDot} className="icon" />
-                                        <p>203 Fake St. Mountain View, San Francisco, California, USA</p>
-                                    </li>
-                                    <li>
-                                        <FontAwesomeIcon icon={faPhone} className="icon" />
-                                        <p>+55 (16) 99988-8777</p>
-                                    </li>
-                                    <li>
-                                        <FontAwesomeIcon icon={faEnvelope} className="icon" />
-                                        <p>email@example.com.br</p>
-                                    </li>
-                                </div>
-                                <div></div>
-                            </div>
-
-                            {/* LINKS */}
-                            <div className='column'>
-                                <h1>Outros Links</h1>
-                                <div className='links'>
-                                    <a href='#sobre'>
-                                        Sobre nós
-                                    </a>
-                                    <a href='#blog'>
-                                        Blog
-                                    </a>
-                                </div>
-                                <div></div>
-                            </div>
-
-                            
-                        </div>
-                        
-                        <p className='desenvolvido'>Copyright ©2024 Todos direitos reservados | Website desenvolvido por <strong>TecVit</strong></p>
-                    </div>
-                </footer>
+                <Creditos />
             </main>
         </>
     );

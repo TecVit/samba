@@ -1,4 +1,4 @@
-.container-landing {
+.container-bilhetes {
     width: 100%;
     height: auto;
     display: flex;
@@ -9,8 +9,9 @@
     top: 70px;
 }
 
+
 /* Content */
-.container-landing .container-info {
+.container-bilhetes {
     width: 100%;
     max-width: 100%;
     height: auto;
@@ -20,15 +21,27 @@
     position: relative;
 }
 
-.container-landing .content-info {
-    width: 90%;
-    max-width: 1100px;
-    height: calc(100vh - 70px);
-    max-height: 700px;
+/* Content */
+.container-bilhetes .container-info {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    position: relative;
+}
+
+.container-bilhetes .content-info {
+    width: 90%;
+    max-width: 1100px;
+    height: calc(100vh - 70px);
+    max-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0px 0px 60px 0px;
 }
 
 .container-info .confetes {
@@ -40,7 +53,7 @@
     z-index: 1;
 }
 
-.container-landing .content-info .info {
+.container-bilhetes .content-info .info {
     width: 100%;
     height: auto;
     display: flex;
@@ -51,15 +64,15 @@
     margin: 0px;
 }
 
-.container-landing .content-info .info h2 {
+.container-bilhetes .content-info .info h2 {
     font-size: 44px;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 0.4px;
     color: var(--orangeThree);
     margin: 0px 0px -2px 0px;
 }
 
-.container-landing .content-info .info h1 {
+.container-bilhetes .content-info .info h1 {
     font-size: 54px;
     font-weight: 800;
     letter-spacing: 0.4px;
@@ -67,15 +80,39 @@
     margin: 0px 0px 20px 0px;
 }
 
-.container-landing .content-info .info p {
-    font-size: 20px;
+.container-bilhetes .content-info .info p {
+    font-size: 22px;
     font-weight: 300;
     letter-spacing: 0px;
     color: var(--neutralTwo);
     margin: 0px 0px 30px 0px;
 }
 
-.container-landing .content-info .info .datas {
+.container-bilhetes .content-info .info .rotas {
+    width: max-content;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.container-bilhetes .content-info .info .rotas p {
+    font-size: 21px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    color: var(--neutralSeven);
+    margin: 10px 8px 0px 0px;
+    cursor: pointer;
+    transition: all .1s linear;
+} .container-bilhetes .content-info .info .rotas p:hover {
+    color: var(--orangeThree);
+} .container-bilhetes .content-info .info .rotas p:last-child {
+    cursor: text;
+} .container-bilhetes .content-info .info .rotas p:last-child:hover {
+    color: var(--neutralSeven);
+}
+
+.container-bilhetes .content-info .info .datas {
     width: max-content;
     height: max-content;
     display: flex;
@@ -84,18 +121,18 @@
     justify-content: center;
 }
 
-.container-landing .content-info .info .datas .data {
+.container-bilhetes .content-info .info .datas .data {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     padding: 5px 20px 0px 0px;
     margin: 0px 20px 0px 0px;
     border-right: 1px solid var(--neutralEight);
-} .container-landing .content-info .info .datas .data:last-child {
+} .container-bilhetes .content-info .info .datas .data:last-child {
     border-right: none;
 }
 
-.container-landing .content-info .info .datas .data h1 {
+.container-bilhetes .content-info .info .datas .data h1 {
     font-size: 35px;
     font-weight: 400;
     letter-spacing: 0.4px;
@@ -103,7 +140,7 @@
     margin: 0px 0px 6px 0px;
 }
 
-.container-landing .content-info .info .datas .data p {
+.container-bilhetes .content-info .info .datas .data p {
     font-size: 16px;
     font-weight: 350;
     letter-spacing: 0px;
@@ -111,7 +148,7 @@
     margin: 0px 0px 0px 0px;
 }
 
-.container-landing .content-info .info h3 {
+.container-bilhetes .content-info .info h3 {
     max-width: 350px;
     font-size: 20px;
     font-weight: 500;
@@ -121,43 +158,44 @@
 }
 
 /* Pricing Tables */
-.container-landing .content-pricing {
+.container-bilhetes .content-pricing {
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 20px auto 0px auto;
-    background: var(--backgroundGradient);
+    background: transparent;
     color: var(--neutralTen);
-    padding: 70px 0px 100px 0px;
+    padding: 50px 0px 120px 0px;
 }
 
-.container-landing .pricing-tables {
+.container-bilhetes .pricing-tables {
     width: 90%;
     max-width: 1100px;
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: var(--orangeThree);
 }
 
-.container-landing .pricing-tables h1 {
+.container-bilhetes .pricing-tables h1 {
     font-size: 42px;
-    font-weight: 900;
+    font-weight: 600;
     margin: 0px 0px 4px 0px;
     text-align: center;
 }
 
-.container-landing .pricing-tables h2 {
+.container-bilhetes .pricing-tables h2 {
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 500;
     margin: 0px 0px 30px 0px;
-    color: var(--neutralEight);
+    color: var(--orangeFour);
     text-align: center;
 }
 
-.container-landing .pricing-tables .pricings {
+.container-bilhetes .pricing-tables .pricings {
     width: 100%;
     height: auto;
     display: flex;
@@ -169,12 +207,14 @@
     margin: 30px 0px 0px 0px;
 }
 
-.container-landing .pricing-tables .pricings .pricing {
+.container-bilhetes .pricing-tables .pricings .pricing {
     width: max-content;
     max-width: 325px;
     height: max-content;
     border-radius: 18px;
-    background: rgb(0, 0, 0, 0.09);
+    background: var(--orangeThree);
+    background: var(--backgroundGradient);
+    color: var(--neutralTen);
     backdrop-filter: blur(20px);
     border: 1px solid var(--neutralTen);
     padding: 30px;
@@ -185,15 +225,15 @@
 }
 
 /* Recomendado */
-.container-landing .pricing-tables .pricings .pricing.recomendado {
+.container-bilhetes .pricing-tables .pricings .pricing.recomendado {
     border-radius: 0px 0px 18px 18px;
     margin: 30px 0px 0px 0px;
-} .container-landing .pricing-tables .pricings .pricing .recomendado {
-    width: 100.5%;
+} .container-bilhetes .pricing-tables .pricings .pricing .recomendado {
+    width: 100%;
     height: 45px;
     position: absolute;
-    top: -46px;
-    left: -1px;
+    top: -45px;
+    left: 0px;
     border-radius: 18px 18px 0px 0px;
     border-bottom: 1px solid var(--neutralTen);
     background: var(--orangeThree);
@@ -203,31 +243,33 @@
     z-index: 1;
 }
 
-.container-landing .pricing-tables .pricings .pricing h1 {
+.container-bilhetes .pricing-tables .pricings .pricing h1 {
     font-size: 30px;
     font-weight: 650;
     margin: 0px 0px 6px 0px;
+    color: var(--neutralTen);
 }
 
-.container-landing .pricing-tables .pricings .pricing p {
+.container-bilhetes .pricing-tables .pricings .pricing p {
     font-size: 18px;
     font-weight: 500;
     margin: 0px 0px 0px 0px;
 }
 
-.container-landing .pricing-tables .pricings .pricing h2 {
+.container-bilhetes .pricing-tables .pricings .pricing h2 {
     font-size: 45px;
     font-weight: 800;
     margin: 25px 0px;
     display: flex;
     align-items: flex-start;
-} .container-landing .pricing-tables .pricings .pricing h2 strong {
+    color: var(--neutralEleven);
+} .container-bilhetes .pricing-tables .pricings .pricing h2 strong {
     font-size: 30px;
     font-weight: 700;
     margin: 2px 8px 0px 0px;
 }
 
-.container-landing .pricing-tables .pricings .pricing button {
+.container-bilhetes .pricing-tables .pricings .pricing button {
     width: 100%;
     height: 55px;
     border-radius: 24px;
@@ -241,14 +283,14 @@
     cursor: pointer;
     margin: 0px 0px 20px 0px;
     transition: all .1s linear;
-} .container-landing .pricing-tables .pricings .pricing button:hover,
-.container-landing .pricing-tables .pricings .pricing button:focus {
+} .container-bilhetes .pricing-tables .pricings .pricing button:hover,
+.container-bilhetes .pricing-tables .pricings .pricing button:focus {
     background: var(--neutralEight);
     color: var(--orangeThree);
     box-shadow: 0px 4px 10px rgb(0, 0, 0, 0.4);
 }
 
-.container-landing .pricing-tables .pricings .pricing .list {
+.container-bilhetes .pricing-tables .pricings .pricing .list {
     width: 100%;
     height: auto;
     display: flex;
@@ -256,7 +298,7 @@
     align-items: center;
 }
 
-.container-landing .pricing-tables .pricings .pricing .list li {
+.container-bilhetes .pricing-tables .pricings .pricing .list li {
     width: 100%;
     height: auto;
     display: flex;
@@ -267,11 +309,11 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-} .container-landing .pricing-tables .pricings .pricing .list li:last-child {
+} .container-bilhetes .pricing-tables .pricings .pricing .list li:last-child {
     border-bottom: none;
 }
 
-.container-landing .pricing-tables .pricings .pricing .list li .icon {
+.container-bilhetes .pricing-tables .pricings .pricing .list li .icon {
     margin: 0px 8px 0px 0px;
     font-size: 20px;
 }

@@ -1,0 +1,453 @@
+.container-pagamento {
+    width: 100%;
+    height: auto;
+    padding: 0px 0px 0px 0px;
+    background: var(--neutralTen);
+    color: var(--neutralThree);
+    position: relative;
+}
+
+.content-pagamento {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0px auto;
+}
+
+.container-pagamento h1.logo {
+    position: absolute;
+    top: 15px;
+    left: 35px;
+    color: var(--orangeThree);
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.container-pagamento .info {
+    width: 45%;
+    max-width: 400px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    margin: 0px 5% 0px 0px;
+}
+
+.container-pagamento .info h2 {
+    width: 100%;
+    font-size: 15.5px;
+    text-transform: uppercase;
+    color: var(--orangeThree);
+    margin: 0px 0px 6px 0px;
+}
+
+.container-pagamento .info h1 {
+    width: 100%;
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: -0.5px;
+    color: var(--neutralFive);
+    margin: 0px 0px 4px 0px;
+}
+
+
+.container-pagamento .info .perguntas {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--neutralThree);
+}
+
+.container-pagamento .info .perguntas .pergunta {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 0px 2.5px 0px;
+}
+.container-pagamento .info .perguntas .pergunta .top {
+    width: 95%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px;
+    cursor: pointer;
+}
+
+.container-pagamento .info .perguntas .pergunta .top h2 {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: -0.2px;
+    color: var(--neutralFive);
+    margin: 0px;
+    text-transform: none;
+}
+
+.container-pagamento .info .perguntas .pergunta .top .icon {
+    font-size: 18px;
+    margin: 0px 0px 0px 10px;
+}
+
+.container-pagamento .info .perguntas .pergunta .bottom {
+    width: 95%;
+    margin: 10px 0px 0px 0px;
+}
+
+.container-pagamento .info .perguntas .pergunta .bottom p {
+    font-size: 15.75px;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+    color: var(--neutralFive);
+    line-height: 20px;
+    margin: 0px 0px 0px 0px;
+    text-align: justify;
+    text-transform: none;
+}
+
+/* Metodos de pagamento */
+.container-pagamento .metodos {
+    width: 45%;
+    max-width: 400px;
+    height: max-content;
+    margin: 0px;
+    position: relative;
+}
+
+
+.container-pagamento .metodos .metodo {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    background: var(--neutralEleven);
+    border: 2px solid var(--neutralEight);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 15px 0px;
+    cursor: pointer;
+    user-select: none;
+}.container-pagamento .metodos .metodo:hover {
+    box-shadow: 0px 0px 15px var(--neutralSix);
+} 
+
+.container-pagamento .metodos .metodo.selecionado {
+    border: 2px solid var(--orangeThree);
+} .container-pagamento .metodos .metodo.selecionado:hover {
+    box-shadow: 0px 0px 15px var(--orangeThree);
+} 
+
+.container-pagamento .metodos .metodo.selecionado .flex h1,
+.container-pagamento .metodos .metodo.selecionado .flex h2 {
+    color: var(--orangeThree);
+}
+
+/* Bilhete Antecipado */
+.container-pagamento .metodos .metodo.bilhete-antecipado {
+    border: 2px solid var(--orangeFour);
+    background: var(--orangeFour);
+    color: var(--neutralEleven);
+}.container-pagamento .metodos .metodo.bilhete-antecipado:hover {
+    box-shadow: 0px 0px 15px var(--orangeFour);
+}
+
+.container-pagamento .metodos .metodo.bilhete-antecipado .flex h1,
+.container-pagamento .metodos .metodo.bilhete-antecipado .flex h2 {
+    color: var(--neutralEleven);
+} .container-pagamento .metodos .metodo.bilhete-antecipado p {
+    color: var(--neutralTen);
+}
+
+.container-pagamento .metodos .metodo.bilhete-antecipado.selecionado {
+    border: 2px solid var(--orangeTwo);
+} .container-pagamento .metodos .metodo.bilhete-antecipado.selecionado:hover {
+    box-shadow: 0px 0px 15px var(--orangeTwo);
+}
+
+
+
+.container-pagamento .metodos .metodo .flex {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 0px 6px 0px;
+}
+
+.container-pagamento .metodos .metodo .flex h1 {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    margin: 0px 4px 0px 0px;
+    display: flex;
+    align-items: center;
+} .container-pagamento .metodos .metodo .flex h1 .icon {
+    margin: 0px 8px 0px 0px;
+}
+
+.container-pagamento .metodos .metodo .flex h2 {
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    display: flex;
+    align-items: flex-end;
+} .container-pagamento .metodos .metodo .flex h2 strong {
+    font-size: 15.25px;
+    font-weight: 600;
+    text-decoration: line-through;
+    color: var(--neutralFive);
+    margin: 0px 4px 0px 0px;
+}
+
+.container-pagamento .metodos .metodo p {
+    width: 100%;
+    font-size: 15.75px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    color: var(--neutralFive);
+}
+
+.container-pagamento .metodos button {
+    width: calc(100% + 45px);
+    max-width: 445px;
+    height: 55px;
+    min-height: 55px;
+    border-radius: 12px;
+    margin: 10px 0px;
+    background: var(--orangeThree);
+    color: var(--neutralTen);
+    font-size: 15px;
+    cursor: pointer;
+} .container-pagamento .metodos button:hover,
+.container-pagamento .metodos button:focus {
+    box-shadow: 0px 2.5px 12.5px var(--orangeTwo);
+}
+
+.container-pagamento .metodos .voltar {
+    background: var(--neutralNine);
+    color: var(--neutralFive);
+    border: 2px solid var(--neutralNine);
+    box-shadow: 0px 0px 4px rgb(0, 0, 0, 0.6);
+} .container-pagamento .metodos button:hover,
+.container-pagamento .metodos button:focus {
+    box-shadow: 0px 0px 12.5px rgb(0, 0, 0, 0.6);
+}
+
+.container-pagamento .metodos button.bloqueado {
+    background: var(--orangeFive);
+    cursor: auto;
+} .container-pagamento .metodos button.bloqueado:focus,
+.container-pagamento .metodos button.bloqueado:hover {
+    box-shadow: none;
+}
+
+
+/* Formulário */
+.container-pagamento .metodos .form {
+    width: calc(100% + 40px);
+    height: 50vh;
+    max-height: 265px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 18px 0px 0px;
+    margin: 0px 0px 10px 0px;
+}
+
+.container-pagamento .metodos .form .input {
+    width: max-content;
+    height: auto;
+    display: flex;
+    flex-direction: column;    
+    margin: 0px auto 20px 0px;
+    position: relative;
+}
+
+.container-pagamento .metodos .form .input label {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--neutralSix);
+    margin: 0px 0px 4px 2px;
+} .container-pagamento .metodos .form .input label strong {
+    font-weight: 600;
+    color: var(--red);
+    margin: 0px 0px 0px 6px;
+}
+
+.container-pagamento .metodos .form .input input {
+    width: 400px;
+    max-width: 100%;
+    height: 45px;
+    border: 2px solid var(--neutralEight);
+    border-radius: 8px;
+    padding: 0px 17.5px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--neutralFive);
+    outline: none;
+} .container-pagamento .metodos .form .input input:focus {
+    border: 2px solid var(--neutralSeven);
+    box-shadow: 0px 0px 10px var(--neutralSeven);
+}
+
+
+
+
+/* Creditos */
+.container-pagamento .desenvolvido {
+    width: 90%;
+    font-size: 15.5px;
+    font-weight: 500;
+    margin: 20px auto 0px auto;
+    color: var(--neutralThree);
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+} .container-pagamento .desenvolvido strong {
+    font-size: 17px;
+    font-weight: 750;
+    letter-spacing: 0.4px;
+    color: var(--blue);
+    cursor: pointer;
+    margin: 0px 0px 0px 6px;
+} .container-pagamento .desenvolvido strong:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+/* Designer para Celular */
+@media (max-height: 600px) {
+    .content-pagamento {
+        padding: 100px 0px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-pagamento .info {
+        width: 90%;
+        max-width: 100%;
+        margin: 0px auto 30px auto;
+    }
+    
+    .container-pagamento .info .perguntas .pergunta .top,
+    .container-pagamento .info .perguntas .pergunta .bottom { 
+        width: 100%;
+    }
+    
+    .container-pagamento .metodos {
+        width: 90%;
+        max-width: 100%;
+    }
+
+    .container-pagamento .metodos .form {
+        width: 100%;
+        max-width: 100%;
+        max-height: max-content;
+        height: max-content;
+    } .container-pagamento .metodos .form .input {
+        width: 100%;
+        max-width: 100%;
+    } .container-pagamento .metodos .form .input input {
+        width: 100%;
+        max-width: calc(100% - 40px);
+    }
+
+    .container-pagamento .metodos .metodo {
+        width: calc(100% - 45px);
+        max-width: 100%;
+        position: relative;
+    }
+
+    .container-pagamento .metodos button {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .container-pagamento .desenvolvido {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 14.5px;
+        display: block;
+        text-align: center;
+    }
+}
+
+@media (max-width: 1000px) {
+    .content-pagamento {
+        padding: 100px 0px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-pagamento .info {
+        width: 90%;
+        max-width: 100%;
+        margin: 0px auto 30px auto;
+    }
+    
+    .container-pagamento .info .perguntas .pergunta .top,
+    .container-pagamento .info .perguntas .pergunta .bottom { 
+        width: 100%;
+    }
+
+    .container-pagamento .metodos {
+        width: 90%;
+        max-width: 100%;
+        position: relative;
+    }
+
+    .container-pagamento .metodos .form {
+        width: 100%;
+        max-width: 100%;
+    } .container-pagamento .metodos .form .input {
+        width: 100%;
+        max-width: 100%;
+    } .container-pagamento .metodos .form .input input {
+        width: 100%;
+        max-width: calc(100% - 40px);
+    }
+
+    .container-pagamento .metodos .metodo {
+        width: calc(100% - 45px);
+        max-width: 100%;
+        position: relative;
+    }
+
+    .container-pagamento .metodos button {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .container-pagamento .desenvolvido {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 14.5px;
+        display: block;
+        text-align: center;
+    }
+
+}

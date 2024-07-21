@@ -36,11 +36,12 @@
     width: 90%;
     max-width: 1100px;
     height: calc(100vh - 70px);
-    max-height: 400px;
+    max-height: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    margin: 0px 0px 60px 0px;
 }
 
 .container-info .confetes {
@@ -111,9 +112,6 @@
     color: var(--neutralSeven);
 }
 
-    
-
-
 .container-blog .content-info .info .datas {
     width: max-content;
     height: max-content;
@@ -167,6 +165,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0px 0px 0px 0px;
 }
 
 .container-posts .posts {
@@ -178,7 +177,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px 35px;
-    margin: -20px 0px 0px 0px;
+    margin: 30px 0px 0px 0px;
     padding: 0px 0px 140px 0px;
 }
 
@@ -329,7 +328,7 @@
 }
 
 .container-post-selecionado .comentarios .form-comentario {
-    width: 100%;
+    width: 50%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -414,4 +413,77 @@
     background: transparent;
     color: var(--orangeThree);
     box-shadow: 0px 0px 10px var(--orangeThree);
+}
+
+.container-post-selecionado .comentarios .lista-comentarios {
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-post-selecionado .comentarios .lista-comentarios h1 {
+    font-size: 24px;
+    font-weight: 650;
+    color: var(--neutralSix);
+    margin: 0px 0px 20px 0px;
+}
+
+.container-post-selecionado .comentarios .lista-comentarios .comentario {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0px 20px 0px;
+}
+
+.container-post-selecionado .comentarios .lista-comentarios .comentario .icon {
+    font-size: 30px;
+    color: var(--orangeThree);
+}
+
+.container-post-selecionado .comentarios .lista-comentarios .comentario .column {
+    width: max-content;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 11.5px;
+}
+
+.container-post-selecionado .comentarios .lista-comentarios .comentario .column h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--orangeThree);
+    margin: 0px 0px 10px 0px;
+}
+
+.container-post-selecionado .comentarios .lista-comentarios .comentario .column h2 {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--neutralSeven);
+    margin: 0px 0px 4px 0px;
+}
+
+.container-post-selecionado .comentarios .lista-comentarios .comentario .column p {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--neutralFive);
+    margin: 0px;
+}
+
+/* Mostrar mais ou menos */
+.container-post-selecionado .comentarios .lista-comentarios button {
+    width: max-content;
+    height: max-content;
+    border-radius: 8px;
+    background: transparent;
+    margin: 15px auto 0px auto;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--orangeThree);
+} .container-post-selecionado .comentarios .lista-comentarios button:hover,
+.container-post-selecionado .comentarios .lista-comentarios button:focus {
+    text-decoration: underline;
+    text-shadow: 0px 0px 10px var(--orangeThree);
 }

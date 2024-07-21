@@ -20,12 +20,15 @@
   --orangeOne: #c2410c;
   --orangeTwo: #ea580c;
   --orangeThree: #f97316;
-  --orangeFour: #fb923c;
+  --orangeFour: #ee8631;
+  --orangeFive: #f3984d;
 
   /* Outros */
-  --backgroundGradient: radial-gradient(213.02% 135.28% at 19.47% -14.53%,var(--orangeOne) 0%, var(--orangeTwo) 30.69%, var(--orangeThree) 100%);
+  --backgroundGradient: radial-gradient(213.02% 135.28% at 19.47% -14.53%, var(--orangeOne) 0%, var(--orangeTwo) 30.69%, var(--orangeThree) 100%);
+  --backgroundGradientLight: radial-gradient(213.02% 135.28% at 19.47% -14.53%, var(--orangeFour) 0%, var(--orangeThree) 30.69%, var(--orangeTwo) 100%);
   --white: #ffffff;
   --blue: #71b3d6;
+  --blueDark: #3a2ea5;
   --yellow: #ffa800;
   --green: #10b710;
   --greenLight: #04d361;
